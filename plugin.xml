@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="cordova-plugin-unionpay"
+	version="1.1.0">
+
+	<name>Unionpay</name>
+	<description>A cordova plugin for Unionpay.</description>
+	<license>MIT</license>
+	<keywords>Cordova,Pay,Unionpay,银联手机支付</keywords>
+
+	<preference name="UnionpayMode" />
+
+	<js-module src="www/unionpay.js" name="unionpay">
+		<clobbers target="unionpay" />
+	</js-module>
+
+	<!-- Android configuration -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Unionpay">
+				<param name="android-package" value="com.santinowu.cordova.unionpay.Unionpay" />
+				<param name="onload" value="true" />
+			</feature>
+
+			<preference name="UnionpayMode" value="$UNIONPAYMODE" />
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.INTERNET"/>
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+			<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+			<uses-permission android:name="android.permission.NFC" />
+			<uses-feature android:name="android.hardware.nfc.hce"/>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.unionpay.uppay.PayActivity"
+				android:screenOrientation="portrait"
+				android:configChanges="orientation|keyboardHidden"
+				android:excludeFromRecents="true"
+				android:windowSoftInputMode="adjustResize" />
+		</config-file>
+
+		<source-file src="src/android/Unionpay.java" target-dir="src/com/santinowu/cordova/unionpay" />
+		<source-file src="libs/android/UPPayAssistEx.jar" target-dir="libs" />
+		<source-file src="libs/android/UPPayPluginExPro.jar" target-dir="libs" />
+		<source-file src="libs/android/armeabi/libentryexpro.so" target-dir="libs/armeabi" />
+		<source-file src="libs/android/armeabi/libuptsmaddon.so" target-dir="libs/armeabi" />
+    <source-file src="libs/android/armeabi-v7a/libentryexpro.so" target-dir="libs/armeabi-v7a" />
+    <source-file src="libs/android/armeabi-v7a/libuptsmaddon.so" target-dir="libs/armeabi-v7a" />
+    <source-file src="libs/android/data.bin" target-dir="assets" />
+	</platform>
+
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="Unionpay">
+				<param name="ios-package" value="Unionpay" />
+				<param name="onload" value="true" />
+			</feature>
+
+			<preference name="UnionpayMode" value="$UNIONPAYMODE" />
+		</config-file>
+
+		<header-file src="src/ios/Unionpay.h" />
+		<source-file src="src/ios/Unionpay.m" />
+
+		<header-file src="src/ios/UPPayPlugin.h" />
+		<header-file src="src/ios/UPPayPluginDelegate.h" />
+		<source-file src="src/ios/libUPPayPlugin.a" framework="true" />
+
+		<framework src="libc++.dylib" />
+		<framework src="QuartzCore.framework" />
+		<framework src="Security.framework" />
+	</platform>
+</plugin>
