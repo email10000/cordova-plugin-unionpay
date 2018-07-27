@@ -5,10 +5,10 @@
  
 安装
 ----
-1. 生产环境
+1. 生产环境\<br>
 ionic cordova plugin add https://github.com/email10000/cordova-plugin-unionpay.git --variable UNIONPAYMODE=00
 
-2. 开发环境
+2. 开发环境\<br>
 ionic cordova plugin add https://github.com/email10000/cordova-plugin-unionpay.git --variable UNIONPAYMODE=01
 
 删除
@@ -41,5 +41,5 @@ ionic cordova plugin remove cordova-plugin-unionpay
     console.log(err);
   });
 ~~~
-2. server 端
+2. server 端\<br>
  ... （略）
