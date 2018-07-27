@@ -1,6 +1,6 @@
 ## cordova-plugin-unionpay
 
- 感谢 Santino-Wu/cordova-plugin-unionpay 的原始版本，不过已经失效，做了些改动支持当前最新的银联支付。\<br>
+ 感谢 Santino-Wu/cordova-plugin-unionpay 的原始版本，不过已经失效，做了些改动支持当前最新的银联支付。<br>
  Android, IOS 下测试通过。
  
 安装
