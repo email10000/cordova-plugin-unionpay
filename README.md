@@ -1,21 +1,25 @@
-# cordova-plugin-unionpay
+## cordova-plugin-unionpay
 
- 感谢 Santino-Wu/cordova-plugin-unionpay 的原始版本，不过已经失效，做了些改动支持当前最新的银联支付。
+ 感谢 Santino-Wu/cordova-plugin-unionpay 的原始版本，不过已经失效，做了些改动支持当前最新的银联支付。\<br>
  Android, IOS 下测试通过。
  
-# 安装
+安装
+----
 1. 生产环境
 ionic cordova plugin add https://github.com/email10000/cordova-plugin-unionpay.git --variable UNIONPAYMODE=00
 
 2. 开发环境
 ionic cordova plugin add https://github.com/email10000/cordova-plugin-unionpay.git --variable UNIONPAYMODE=01
 
-# 删除
+删除
+----
 ionic cordova plugin remove cordova-plugin-unionpay
 
-# 例子
+例子
+----
 1. ionic 客户端
 
+~~~
    /* 在ts 文件头部声明window变量 */ 
    declare let window:any;
    ...
@@ -36,6 +40,6 @@ ionic cordova plugin remove cordova-plugin-unionpay
   }, function (err){
     console.log(err);
   });
-
+~~~
 2. server 端
- ... （略） 参考官方文档
+ ... （略）
