@@ -18,7 +18,7 @@ ionic cordova plugin remove cordova-plugin-unionpay
 
 例子
 ----
-1. ionic 客户端
+* ionic 客户端<br>
 
 ~~~
    /* 在ts 文件头部声明window变量 */ 
@@ -42,5 +42,5 @@ ionic cordova plugin remove cordova-plugin-unionpay
     console.log(err);
   });
 ~~~
-2. server 端\<br>
- ... （略）
+* server 端<br>
+   ... （略）
